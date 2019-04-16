@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="skip_text_size">32sp</dimen>
+    <dimen name="button_login_text_size">22sp</dimen>
+    <dimen name="button_margin">16dp</dimen>
+</resources>

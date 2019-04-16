@@ -2,4 +2,6 @@
     <string name="app_name">Barber Booking App</string>
     <string name="FACEBOOK_APP_ID">425521601566304</string>
     <string name="ACCOUNT_KIT_CLIENT_TOKEN">73f215ef02a8da1bfa4c9292594440a4</string>
+    <string name="hint_just_skip">Just Skip</string>
+    <string name="hint_login">Login</string>
 </resources>
