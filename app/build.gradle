@@ -30,10 +30,15 @@ dependencies {
     //Add libraries
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support:design:28.0.0'
-    implementation 'com.google.android.gms:play-services-auth:16.0.1'
-    implementation 'com.google.firebase:firebase-firestore:18.2.0'
+    implementation 'com.github.d-max:spots-dialog:1.1@aar'
+
+    //ButterKnife
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+
+    //Firebase
+    implementation 'com.google.android.gms:play-services-auth:16.0.1'
+    implementation 'com.google.firebase:firebase-firestore:18.2.0'
 
     //Facebook Account Kit
     implementation 'com.facebook.android:account-kit-sdk:4.+'

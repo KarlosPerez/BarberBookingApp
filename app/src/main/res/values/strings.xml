@@ -7,6 +7,10 @@
     <string name="hint_menu_home">Home</string>
     <string name="hint_menu_shopping">Shopping</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="dummy_name">Your Name</string>
+    <string name="dummy_address">Your Address</string>
+    <string name="hint_update">Update</string>
+    <string name="home_fragment_title">Home Fragment</string>
+    <string name="shopping_fragment_title">Shopping Fragment</string>
 </resources>
