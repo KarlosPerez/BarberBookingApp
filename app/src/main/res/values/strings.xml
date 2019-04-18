@@ -4,4 +4,9 @@
     <string name="ACCOUNT_KIT_CLIENT_TOKEN">73f215ef02a8da1bfa4c9292594440a4</string>
     <string name="hint_just_skip">Just Skip</string>
     <string name="hint_login">Login</string>
+    <string name="hint_menu_home">Home</string>
+    <string name="hint_menu_shopping">Shopping</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
