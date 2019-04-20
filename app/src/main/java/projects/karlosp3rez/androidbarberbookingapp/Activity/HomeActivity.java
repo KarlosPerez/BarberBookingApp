@@ -39,7 +39,7 @@ public class HomeActivity extends AppCompatActivity {
 
     @BindView(R.id.bottom_navigation)
     BottomNavigationView bottomNavigationView;
-    
+
     BottomSheetDialog bottomSheetDialog;
     CollectionReference userRef;
     AlertDialog dialog;
