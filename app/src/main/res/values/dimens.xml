@@ -3,4 +3,9 @@
     <dimen name="skip_text_size">32sp</dimen>
     <dimen name="button_login_text_size">22sp</dimen>
     <dimen name="button_margin">16dp</dimen>
+    <dimen name="padding_very_small">2dp</dimen>
+    <dimen name="padding_small">8dp</dimen>
+    <dimen name="txt_user_name_size">22sp</dimen>
+    <dimen name="txt_member_type_size">16sp</dimen>
+    <dimen name="text_card_size">18sp</dimen>
 </resources>

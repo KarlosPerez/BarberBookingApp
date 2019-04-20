@@ -7,5 +7,6 @@
     <color name="menuItems">#35322c</color>
     <color name="colorButton">#0f0a00</color>
     <color name="colorBackground">#FDF9EE</color>
+    <color name="homeBackground">DFDFDF</color>
 
 </resources>

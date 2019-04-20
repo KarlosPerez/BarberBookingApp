@@ -13,4 +13,11 @@
     <string name="hint_update">Update</string>
     <string name="home_fragment_title">Home Fragment</string>
     <string name="shopping_fragment_title">Shopping Fragment</string>
+    <string name="dummy_client_name">Carlos Andrés</string>
+    <string name="dummy_member_type">Normal</string>
+    <string name="dummy_card_item_booking">Booking</string>
+    <string name="card_item_shopping_cart">Cart</string>
+    <string name="card_item_history">History</string>
+    <string name="card_item_notify">Notification</string>
+    <string name="hint_look_book">Look Book</string>
 </resources>
