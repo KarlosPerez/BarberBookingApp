@@ -4,6 +4,7 @@ package projects.karlosp3rez.androidbarberbookingapp.Fragments;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.transition.Slide;
 import android.view.LayoutInflater;
@@ -29,6 +30,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import projects.karlosp3rez.androidbarberbookingapp.Adapter.HomeSliderAdapter;
+import projects.karlosp3rez.androidbarberbookingapp.Adapter.LookBookAdapter;
 import projects.karlosp3rez.androidbarberbookingapp.Common.Common;
 import projects.karlosp3rez.androidbarberbookingapp.Interface.IBannerLoadListener;
 import projects.karlosp3rez.androidbarberbookingapp.Interface.ILookbookLoadListener;
@@ -82,8 +84,31 @@ public class HomeFragment extends Fragment implements IBannerLoadListener, ILook
         if(AccountKit.getCurrentAccessToken() != null) {
             setUserInformation();
             loadBanner();
+            loadLookBook();
         }
         return view;
+    }
+
+    private void loadLookBook() {
+        lookbookRef.get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        List<Banner> lookbooks = new ArrayList<>();
+                        if(task.isSuccessful()) {
+                            for(QueryDocumentSnapshot bannerSnapShot:task.getResult()) {
+                                Banner banner = bannerSnapShot.toObject(Banner.class);
+                                lookbooks.add(banner);
+                            }
+                            iLookbookLoadListener.onLookbookLoadSuccess(lookbooks);
+                        }
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                iLookbookLoadListener.onLookbookLoadFailure(e.getMessage());
+            }
+        });
     }
 
     private void loadBanner() {
@@ -126,11 +151,13 @@ public class HomeFragment extends Fragment implements IBannerLoadListener, ILook
 
     @Override
     public void onLookbookLoadSuccess(List<Banner> banners) {
-
+        recyclerView_look_book.setHasFixedSize(true);
+        recyclerView_look_book.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView_look_book.setAdapter(new LookBookAdapter(getActivity(), banners));
     }
 
     @Override
     public void onLookbookLoadFailure(String message) {
-
+        Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
     }
 }
