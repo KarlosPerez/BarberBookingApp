@@ -20,4 +20,6 @@
     <string name="card_item_history">History</string>
     <string name="card_item_notify">Notification</string>
     <string name="hint_look_book">Look Book</string>
+    <string name="hint_previous">Previous</string>
+    <string name="hint_btn_next">Next</string>
 </resources>

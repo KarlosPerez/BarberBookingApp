@@ -1,9 +1,11 @@
 package projects.karlosp3rez.androidbarberbookingapp.Fragments;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.transition.Slide;
@@ -28,7 +30,9 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import butterknife.Unbinder;
+import projects.karlosp3rez.androidbarberbookingapp.Activity.BookingActivity;
 import projects.karlosp3rez.androidbarberbookingapp.Adapter.HomeSliderAdapter;
 import projects.karlosp3rez.androidbarberbookingapp.Adapter.LookBookAdapter;
 import projects.karlosp3rez.androidbarberbookingapp.Common.Common;
@@ -54,6 +58,10 @@ public class HomeFragment extends Fragment implements IBannerLoadListener, ILook
     Slider banner_slider;
     @BindView(R.id.recycler_look_book)
     RecyclerView recyclerView_look_book;
+    @OnClick(R.id.card_view_booking)
+    void booking() {
+        startActivity(new Intent(getActivity(), BookingActivity.class));
+    }
 
     //FireStore
     CollectionReference bannerRef, lookbookRef;
