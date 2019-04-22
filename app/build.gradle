@@ -45,4 +45,9 @@ dependencies {
     //Facebook Account Kit
     implementation 'com.facebook.android:account-kit-sdk:4.39.0'
 
+    //StepView
+    implementation 'com.shuhart.stepview:stepview:1.4.0'
+    //Material Spinner
+    implementation 'com.jaredrummler:material-spinner:1.3.1'
+
 }
