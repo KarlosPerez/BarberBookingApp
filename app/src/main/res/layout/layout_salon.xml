@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/padding_very_small">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="@dimen/button_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txt_salon_name"
+            android:textSize="@dimen/txt_user_name_size"
+            android:textStyle="bold"
+            android:fontFamily="@font/bellerose"
+            android:gravity="center_horizontal"
+            android:text="@string/hint_salon_one"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/txt_salon_address"
+            android:textSize="@dimen/txt_member_type_size"
+            android:textStyle="italic"
+            android:fontFamily="@font/bellerose"
+            android:gravity="center_horizontal"
+            android:text="@string/hint_salon_one"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>
