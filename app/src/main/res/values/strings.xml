@@ -22,4 +22,8 @@
     <string name="hint_look_book">Look Book</string>
     <string name="hint_previous">Previous</string>
     <string name="hint_btn_next">Next</string>
+    <string name="hint_step_1">STEP 1</string>
+    <string name="hint_step_2">STEP 2</string>
+    <string name="hint_step_3">STEP 3</string>
+    <string name="hint_step_4">STEP 4</string>
 </resources>
