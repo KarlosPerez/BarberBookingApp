@@ -30,6 +30,7 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import dmax.dialog.SpotsDialog;
 import projects.karlosp3rez.androidbarberbookingapp.Adapter.SalonAdapter;
+import projects.karlosp3rez.androidbarberbookingapp.Common.Common;
 import projects.karlosp3rez.androidbarberbookingapp.Common.SpacesItemDecoration;
 import projects.karlosp3rez.androidbarberbookingapp.Interface.IAllSalonLoadListener;
 import projects.karlosp3rez.androidbarberbookingapp.Interface.IBranchLoadListener;
@@ -124,6 +125,7 @@ public class BookingStep1Fragment extends Fragment implements IAllSalonLoadListe
 
     private void loadBranchOfCity(String cityName) {
         dialog.show();
+        Common.city = cityName;
         branchRef = FirebaseFirestore.getInstance().collection("AllSalon")
                 .document(cityName)
                 .collection("Branch");
