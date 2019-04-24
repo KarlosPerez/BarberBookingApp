@@ -9,4 +9,5 @@ public class Common {
     public static String IS_LOGIN = "IsLogin";
     public static User currentUser;
     public static Salon currentSalon;
+    public static int step = 0;
 }

@@ -34,11 +34,31 @@ public class BookingActivity extends AppCompatActivity {
     Button btn_previous_step;
     @BindView(R.id.btn_next_step)
     Button btn_next_step;
+
     //Event
+    @OnClick(R.id.btn_previous_step)
+    void previousStep() {
+        if(Common.step == 3 || Common.step > 0) {
+            Common.step--;
+            viewPager.setCurrentItem(Common.step);
+        }
+    }
     @OnClick(R.id.btn_next_step)
     void nextClick() {
-        Toast.makeText(this, ""+Common.currentSalon.getSalonId(), Toast.LENGTH_SHORT).show();
+        if(Common.step < 3 || Common.step == 0) {
+            Common.step++;
+            if(Common.step == 1) {
+                if(Common.currentSalon != null) {
+                    loadBarberBySalon(Common.currentSalon.getSalonId());
+                }
+            }
+            viewPager.setCurrentItem(Common.step);
+        }
     }
+
+    private void loadBarberBySalon(String salonId) {
+    }
+
     //Broadcast receiver
     LocalBroadcastManager localBroadcastManager;
     private BroadcastReceiver buttonNextReceiver = new BroadcastReceiver() {
@@ -63,6 +83,7 @@ public class BookingActivity extends AppCompatActivity {
 
         //View
         viewPager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager()));
+        viewPager.setOffscreenPageLimit(4);
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int i, float v, int i1) {
