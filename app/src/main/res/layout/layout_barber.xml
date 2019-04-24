@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    app:cardCornerRadius="@dimen/padding_very_small"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="@dimen/button_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/txt_salon_name"
+            android:src="@drawable/ic_account_circle_black_24dp"
+            android:fontFamily="@font/bellerose"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/txt_user_name_size"
+            android:fontFamily="@font/bellerose"
+            android:textStyle="bold"
+            android:gravity="center_horizontal"
+            android:text="@string/Hint_barber_name"
+            android:id="@+id/txt_barber_name"/>
+
+        <RatingBar
+            android:id="@+id/rtb_barber"
+            android:max="5"
+            style="@style/Base.Widget.AppCompat.RatingBar.Small"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>
