@@ -1,9 +1,15 @@
 package projects.karlosp3rez.androidbarberbookingapp.Activity;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.shuhart.stepview.StepView;
 
@@ -12,7 +18,10 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import projects.karlosp3rez.androidbarberbookingapp.Adapter.ViewPagerAdapter;
+import projects.karlosp3rez.androidbarberbookingapp.Common.Common;
+import projects.karlosp3rez.androidbarberbookingapp.Common.NonSwipeViewPager;
 import projects.karlosp3rez.androidbarberbookingapp.R;
 
 public class BookingActivity extends AppCompatActivity {
@@ -20,17 +29,34 @@ public class BookingActivity extends AppCompatActivity {
     @BindView(R.id.stepview)
     StepView stepView;
     @BindView(R.id.viewPager)
-    ViewPager viewPager;
+    NonSwipeViewPager viewPager;
     @BindView(R.id.btn_previous_step)
     Button btn_previous_step;
     @BindView(R.id.btn_next_step)
     Button btn_next_step;
+    //Event
+    @OnClick(R.id.btn_next_step)
+    void nextClick() {
+        Toast.makeText(this, ""+Common.currentSalon.getSalonId(), Toast.LENGTH_SHORT).show();
+    }
+    //Broadcast receiver
+    LocalBroadcastManager localBroadcastManager;
+    private BroadcastReceiver buttonNextReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            Common.currentSalon = intent.getParcelableExtra(Common.KEY_SALON_STORE);
+            btn_next_step.setEnabled(true);
+            setColorButton();
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_booking);
         ButterKnife.bind(BookingActivity.this);
+        localBroadcastManager = LocalBroadcastManager.getInstance(this);
+        localBroadcastManager.registerReceiver(buttonNextReceiver, new IntentFilter(Common.KEY_ENABLE_BUTTON_TEXT));
 
         setupStepView();
         setColorButton();
@@ -80,5 +106,11 @@ public class BookingActivity extends AppCompatActivity {
         stepList.add("Time");
         stepList.add("Confirm");
         stepView.setSteps(stepList);
+    }
+
+    @Override
+    protected void onDestroy() {
+        localBroadcastManager.unregisterReceiver(buttonNextReceiver);
+        super.onDestroy();
     }
 }
