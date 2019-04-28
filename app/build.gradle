@@ -33,21 +33,19 @@ dependencies {
     implementation 'com.github.d-max:spots-dialog:1.1@aar'
     implementation 'com.ss.bannerslider:bannerslider:2.0.0'
     implementation 'com.squareup.picasso:picasso:2.71828'
-
     //ButterKnife
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
-
     //Firebase
     implementation 'com.google.android.gms:play-services-auth:16.0.1'
     implementation 'com.google.firebase:firebase-firestore:18.2.0'
-
     //Facebook Account Kit
     implementation 'com.facebook.android:account-kit-sdk:4.39.0'
-
     //StepView
     implementation 'com.shuhart.stepview:stepview:1.4.0'
     //Material Spinner
     implementation 'com.jaredrummler:material-spinner:1.3.1'
+    //Horizontal Calendar
+    implementation 'devs.mulham.horizontalcalendar:horizontalcalendar:1.3.4'
 
 }
