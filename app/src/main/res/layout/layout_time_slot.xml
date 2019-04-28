@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_time_slot"
+    android:layout_width="match_parent"
+    app:cardCornerRadius="@dimen/padding_very_small"
+    android:layout_height="match_parent">
+    
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="@dimen/padding_16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txt_time_Slot"
+            android:text="@string/dummy_schedule"
+            android:textSize="@dimen/txt_size_12sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/bellerose"
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/txt_time_Slot_description"
+            android:text="@string/dummy_availability"
+            android:textSize="@dimen/txt_size_14sp"
+            android:textStyle="italic"
+            android:fontFamily="@font/bellerose"
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

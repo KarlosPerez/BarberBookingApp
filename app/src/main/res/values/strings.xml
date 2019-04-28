@@ -28,4 +28,8 @@
     <string name="hint_step_4">STEP 4</string>
     <string name="hint_salon_one">Salon #1</string>
     <string name="Hint_barber_name">Andres</string>
+    <string name="dummy_schedule">9:00 - 9:30</string>
+    <string name="dummy_availability">Available</string>
+    <string name="Available">hint_Available</string>
+    <string name="full">Full</string>
 </resources>
