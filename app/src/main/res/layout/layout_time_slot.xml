@@ -5,7 +5,7 @@
     android:id="@+id/card_time_slot"
     android:layout_width="match_parent"
     app:cardCornerRadius="@dimen/padding_very_small"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
     
     <LinearLayout
         android:orientation="vertical"

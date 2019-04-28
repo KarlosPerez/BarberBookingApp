@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import projects.karlosp3rez.androidbarberbookingapp.Common.Common;
@@ -19,6 +20,11 @@ public class TimeSlotAdapter extends RecyclerView.Adapter<TimeSlotAdapter.TimeSl
 
     Context context;
     List<TimeSlot> timeSlotList;
+
+    public TimeSlotAdapter(Context context) {
+        this.context = context;
+        this.timeSlotList = new ArrayList<>();
+    }
 
     public TimeSlotAdapter(Context context, List<TimeSlot> timeSlotList) {
         this.context = context;
