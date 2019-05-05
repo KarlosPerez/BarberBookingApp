@@ -32,4 +32,13 @@
     <string name="dummy_availability">Available</string>
     <string name="Available">hint_Available</string>
     <string name="full">Full</string>
+    <string name="thank_you_message">Thank you for booking our services!</string>
+    <string name="hint_booking_information">Booking Information</string>
+    <string name="dummy_booking_time">10h00 at 28/03/2019</string>
+    <string name="dummy_booking_barber">Andres</string>
+    <string name="dummy_booking_salon_website">https://www.yoursite.com</string>
+    <string name="dummy_salon_phone">+57 314-345968</string>
+    <string name="dummy_salon_open_hours">9h00 - 19h00</string>
+    <string name="dummy_salon_address">Address of Salon # 1</string>
+    <string name="hint_confirm_booking">CONFIRM</string>
 </resources>
