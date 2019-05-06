@@ -11,8 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/padding_16dp"
-        android:layout_marginBottom="@dimen/padding_16dp"
+        android:layout_marginBottom="@dimen/padding_small"
         android:src="@drawable/banner" />
 
     <LinearLayout
@@ -87,6 +86,7 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
             android:background="@color/colorPrimaryDark" />
 
         <TextView
@@ -107,7 +107,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
-                android:src="@drawable/ic_account_circle_black_24dp" />
+                android:src="@drawable/ic_web_black_24dp" />
 
             <TextView
                 android:id="@+id/txt_booking_salon_website"
@@ -132,7 +132,7 @@
                 android:src="@drawable/ic_local_phone_black_24dp" />
 
             <TextView
-                android:id="@+id/txt_salon_website"
+                android:id="@+id/txt_salon_phone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="4dp"

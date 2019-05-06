@@ -55,7 +55,6 @@ public class BookingStep3Fragment extends Fragment implements ITimeSlotLoadListe
     AlertDialog dialog;
     Unbinder unbinder;
     LocalBroadcastManager localBroadcastManager;
-    Calendar selected_date;
 
     @BindView(R.id.recycler_time_slot)
     RecyclerView recycler_time_slot;
@@ -76,7 +75,6 @@ public class BookingStep3Fragment extends Fragment implements ITimeSlotLoadListe
     private void loadAvailableTimeSlotOfBarber(String barberId, final String bookDate) {
         dialog.show();
 
-        // /AllSalon/NewYork/Branch/z30xkAMB8y0n1SvUl1gV/Barber/jwswCPsMzVd9fw0XxbWo
         barberDoc = FirebaseFirestore.getInstance()
                 .collection("AllSalon")
                 .document(Common.city)
@@ -152,9 +150,6 @@ public class BookingStep3Fragment extends Fragment implements ITimeSlotLoadListe
 
         simpleDateFormat = new SimpleDateFormat("dd_MM_yyyy");
         dialog = new SpotsDialog.Builder().setContext(getContext()).setCancelable(false).build();
-
-        selected_date = Calendar.getInstance();
-        selected_date.add(Calendar.DATE, 0);
     }
 
     @Nullable
@@ -187,8 +182,8 @@ public class BookingStep3Fragment extends Fragment implements ITimeSlotLoadListe
         horizontalCalendar.setCalendarListener(new HorizontalCalendarListener() {
             @Override
             public void onDateSelected(Calendar date, int position) {
-                if(selected_date.getTimeInMillis() != date.getTimeInMillis()) {
-                    selected_date = date;
+                if(Common.currentDate.getTimeInMillis() != date.getTimeInMillis()) {
+                    Common.currentDate = date;
                     loadAvailableTimeSlotOfBarber(Common.currentBarber.getBarberId(),
                             simpleDateFormat.format(date.getTime()));
                 }
