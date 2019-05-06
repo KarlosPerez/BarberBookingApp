@@ -22,6 +22,7 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Locale;
 
 import butterknife.BindView;
@@ -83,6 +84,7 @@ public class BookingStep4Fragment extends Fragment {
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
+                        resetStaticData();
                         getActivity().finish(); //Close activity
                         Toast.makeText(getContext(), "Success!", Toast.LENGTH_SHORT).show();
                     }
@@ -93,6 +95,15 @@ public class BookingStep4Fragment extends Fragment {
             }
         });
 
+    }
+
+    private void resetStaticData() {
+        Common.step = 0;
+        Common.currentTimeSlot = -1;
+        Common.currentSalon = null;
+        Common.currentBarber = null;
+        Common.currentDate = null;
+        Common.currentDate.add(Calendar.DATE, 0);
     }
 
     BroadcastReceiver confirmBookingReceiver = new BroadcastReceiver() {

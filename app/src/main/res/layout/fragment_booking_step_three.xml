@@ -12,7 +12,7 @@
         android:id="@+id/calendar_view"
         android:layout_width="match_parent"
         android:background="@color/colorPrimary"
-        app:textColorSelected="@color/homeBackground"
+        app:textColorSelected="@color/colorBackground"
         android:layout_height="wrap_content" />
 
     <android.support.v7.widget.RecyclerView

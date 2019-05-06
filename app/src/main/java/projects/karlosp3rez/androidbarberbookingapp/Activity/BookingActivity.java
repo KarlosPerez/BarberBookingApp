@@ -58,6 +58,10 @@ public class BookingActivity extends AppCompatActivity {
         if(Common.step == 3 || Common.step > 0) {
             Common.step--;
             viewPager.setCurrentItem(Common.step);
+            if(Common.step < 3) { //Always enable NEXT when step < 3
+                btn_next_step.setEnabled(true);
+                setColorButton();
+            }
         }
     }
     @OnClick(R.id.btn_next_step)
@@ -65,7 +69,7 @@ public class BookingActivity extends AppCompatActivity {
         if(Common.step < 3 || Common.step == 0) {
             Common.step++;
             if(Common.step == 1) {
-                if(Common.currentSalon != null) {
+                if(Common.currentSalon != null) { //After choose salon
                     loadBarberBySalon(Common.currentSalon.getSalonId());
                 }
             } else if (Common.step == 2) { //pick time slot
